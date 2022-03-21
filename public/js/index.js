@@ -146,8 +146,10 @@ function sendTransaction(isAdding) {
 
 document.querySelector("#add-btn").onclick = function() {
   sendTransaction(true);
+  alert('Funds added')
 };
 
 document.querySelector("#sub-btn").onclick = function() {
   sendTransaction(false);
+  alert('Funds removed')
 };

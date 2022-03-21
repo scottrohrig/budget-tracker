@@ -1,5 +1,5 @@
 const RECORD_NAME = 'entry';
-const apiPath = '/api/transaction';
+const apiPath = '/api/transaction/bulk';
 const requestOptions = ( body ) => {
   return {
     method: 'POST',
@@ -33,7 +33,7 @@ request.onsuccess = function ( e ) {
   // is app online?
   if ( navigator.onLine ) {
     // save records
-    uploadEntry();
+    uploadRecords();
   }
 };
 
@@ -50,7 +50,7 @@ function saveRecord( record ) {
   entryObjStore.add( record );
 }
 
-function uploadEntry() {
+function uploadRecords() {
   // console.log( 'uploading record...' );
   const transaction = db.transaction( [ RECORD_NAME ], 'readwrite' );
 
@@ -71,6 +71,8 @@ function uploadEntry() {
           const entryObjStore = transaction.objectStore( RECORD_NAME );
 
           entryObjStore.clear();
+
+          alert( 'All transactions synced with server' );
         } )
         .catch( err => {
           console.log( err );
@@ -78,4 +80,4 @@ function uploadEntry() {
   };
 }
 
-window.addEventListener( 'online', uploadEntry );
+window.addEventListener( 'online', uploadRecords );
