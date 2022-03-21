@@ -2,7 +2,7 @@
 
 This budget tracking pregressive web app (PWA) allows users to install the app on their device and maintains most of it's functionality for adding transactions, when the app has limited to no network connectivity.
 
-[View and install the deployed app](https://srohrig-budget-tracker.herokuapp.com/)
+[![View and install the deployed app](./assets/budget-preview.png)](https://srohrig-budget-tracker.herokuapp.com/)
 
 ## Index
 
